@@ -1,6 +1,8 @@
-﻿using System;
+﻿using SharedLogicTrees;
+using System;
 using System.Collections.Generic;
-using System.Linq;
+//using System.Collections.Generic;
+//using System.Linq;
 
 namespace NodeDepths
 {
@@ -26,8 +28,8 @@ namespace NodeDepths
 			tree3.right = tree7;
 
 			Console.WriteLine("We're supposed to return back sum of nodes' deptgh in a tree");
-			PrintTree(tree1);
-			Console.WriteLine($"The lentgh of the tree is :{NodeDepths(tree1) }");
+			Helpers.PrintTree(tree1);
+			Console.WriteLine($"\nThe sum of nodes' deptgh in the tree is :{NodeDepths(tree1) }");
 		}
 
 
@@ -58,41 +60,40 @@ namespace NodeDepths
 			return totalDepth;
 		}
 
-		public static void PrintTree(BinaryTree root)
-		{
-			var q = new Queue<(BinaryTree node, int depth)>();
-			q.Enqueue((root, 0));
-			Dictionary<int, int> nodesValueDepth = new Dictionary<int, int>();
+		//public static void PrintTree(BinaryTree root)
+		//{
+		//	var q = new Queue<(BinaryTree node, int depth)>();
+		//	q.Enqueue((root, 0));
+		//	Dictionary<int, int> nodesValueDepth = new Dictionary<int, int>();
 
-			while (q.Count > 0)
-			{
-				var currentNode = q.Dequeue();
-				var currentDepth = currentNode.depth + 1;
-				nodesValueDepth.Add(currentNode.node.value, currentNode.depth);
-				if (currentNode.node.left != null)
-				{
-					q.Enqueue((currentNode.node.left, currentDepth));
-				}
-				if (currentNode.node.right != null)
-				{
-					q.Enqueue((currentNode.node.right, currentDepth));
-				}
-			}
+		//	while (q.Count > 0)
+		//	{
+		//		var currentNode = q.Dequeue();
+		//		var currentDepth = currentNode.depth + 1;
+		//		nodesValueDepth.Add(currentNode.node.value, currentNode.depth);
+		//		if (currentNode.node.left != null)
+		//		{
+		//			q.Enqueue((currentNode.node.left, currentDepth));
+		//		}
+		//		if (currentNode.node.right != null)
+		//		{
+		//			q.Enqueue((currentNode.node.right, currentDepth));
+		//		}
+		//	}
 
-			var maxDepth = nodesValueDepth.Values.Max();
+		//	var maxDepth = nodesValueDepth.Values.Max();
 
-            for (int i = 0; i <= maxDepth; i++)
-            {
-                if (i>0)
-                {
-					Console.WriteLine("|");
-                }
+  //          for (int i = 0; i <= maxDepth; i++)
+  //          {
+  //              if (i>0)
+  //              {
+		//			Console.WriteLine("|");
+  //              }
 
-				Console.WriteLine(string.Join('-',nodesValueDepth.Where(a => a.Value == i).Select(a => a.Key ).ToList()));
+		//		Console.WriteLine(string.Join('-',nodesValueDepth.Where(a => a.Value == i).Select(a => a.Key ).ToList()));
 
-            }
-
-		}
+  //          }
+		//}
 
 
 
@@ -109,18 +110,6 @@ namespace NodeDepths
 		//		nodeDepthHelper(root.left, depth + 1) + nodeDepthHelper(root.right, depth + 1);
 		//}
 
-		public class BinaryTree
-		{
-			public int value;
-			public BinaryTree left;
-			public BinaryTree right;
 
-			public BinaryTree(int value)
-			{
-				this.value = value;
-				left = null;
-				right = null;
-			}
-		}
 	}
 }

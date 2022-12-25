@@ -5,6 +5,12 @@ VisualStudioVersion = 16.0.33027.164
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NodeDepths", "NodeDepths\NodeDepths.csproj", "{3F47EB02-3351-4CD6-9756-DC400930A220}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Easy", "Easy", "{7442AE58-C094-4BC9-93E2-654638DC308F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{B4E8522D-7020-4209-BFD8-6CBB8CB2E9B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedLogicTrees", "SharedLogicTrees\SharedLogicTrees.csproj", "{329F5976-0199-4521-A35E-D0D7318C108B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +21,17 @@ Global
 		{3F47EB02-3351-4CD6-9756-DC400930A220}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F47EB02-3351-4CD6-9756-DC400930A220}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F47EB02-3351-4CD6-9756-DC400930A220}.Release|Any CPU.Build.0 = Release|Any CPU
+		{329F5976-0199-4521-A35E-D0D7318C108B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{329F5976-0199-4521-A35E-D0D7318C108B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{329F5976-0199-4521-A35E-D0D7318C108B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{329F5976-0199-4521-A35E-D0D7318C108B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3F47EB02-3351-4CD6-9756-DC400930A220} = {7442AE58-C094-4BC9-93E2-654638DC308F}
+		{329F5976-0199-4521-A35E-D0D7318C108B} = {B4E8522D-7020-4209-BFD8-6CBB8CB2E9B4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EA17F4B6-775C-485E-881A-9FA9B21028D4}
