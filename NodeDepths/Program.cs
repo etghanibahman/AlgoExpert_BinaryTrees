@@ -15,11 +15,15 @@ namespace NodeDepths
 			BinaryTree tree3 = new BinaryTree(3);
 			BinaryTree tree4 = new BinaryTree(4);
 			BinaryTree tree5 = new BinaryTree(5);
+			BinaryTree tree6 = new BinaryTree(6);
+			BinaryTree tree7 = new BinaryTree(7);
 
 			tree1.left = tree2;
 			tree1.right = tree3;
 			tree2.left = tree4;
 			tree2.right = tree5;
+			tree3.left = tree6;
+			tree3.right = tree7;
 
 			Console.WriteLine("We're supposed to return back sum of nodes' deptgh in a tree");
 			PrintTree(tree1);
