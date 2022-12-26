@@ -28,16 +28,13 @@ namespace SharedLogicTrees
 			}
 
 			var maxDepth = nodesValueDepth.Values.Max();
-
 			for (int i = 0; i <= maxDepth; i++)
 			{
 				if (i > 0)
 				{
 					Console.WriteLine("|");
 				}
-
 				Console.WriteLine(string.Join('-', nodesValueDepth.Where(a => a.Value == i).Select(a => a.Key).ToList()));
-
 			}
 		}
 	}
