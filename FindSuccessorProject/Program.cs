@@ -63,66 +63,67 @@ namespace FindSuccessorProject
         }
 
 
+        //This one works when we have parent node, if not we have no choice but to go for traversing the whole tree
         #region O(h) Time, O(1) Space
-        public static BinaryTree FindSuccessor(BinaryTree tree, BinaryTree node)
-        {
-            if (node.right != null)
-                return GetLeftMostChild(node.right);
+        //public static BinaryTree FindSuccessor(BinaryTree tree, BinaryTree node)
+        //{
+        //    if (node.right != null)
+        //        return GetLeftMostChild(node.right);
 
-            return GetRightMostParent(node);
-        }
+        //    return GetRightMostParent(node);
+        //}
 
-        public static BinaryTree GetLeftMostChild(BinaryTree node)
-        {
-            while (node.left != null)
-            {
-                node = node.left;
-            }
-            return node;
-        }
-        public static BinaryTree GetRightMostParent(BinaryTree node)
-        {
-            while (node.parent != null && node.parent.right == node)
-            {
-                node = node.parent;
-            }
-            return node.parent;
-        }
+        //public static BinaryTree GetLeftMostChild(BinaryTree node)
+        //{
+        //    while (node.left != null)
+        //    {
+        //        node = node.left;
+        //    }
+        //    return node;
+        //}
+        //public static BinaryTree GetRightMostParent(BinaryTree node)
+        //{
+        //    while (node.parent != null && node.parent.right == node)
+        //    {
+        //        node = node.parent;
+        //    }
+        //    return node.parent;
+        //}
         #endregion
 
         #region O(n) Time, O(n) Space
-        //public static BinaryTree FindSuccessor(BinaryTree tree, BinaryTree node)
-        //{
-        //    var inOrderTraversalOrder = getInOrderTraversalOrder(tree);
+        public static BinaryTree FindSuccessor(BinaryTree tree, BinaryTree node)
+        {
+            var inOrderTraversalOrder = getInOrderTraversalOrder(tree);
 
-        //    foreach (var item in inOrderTraversalOrder)
-        //    {
-        //        if (item == node)
-        //        {
-        //            var idx = inOrderTraversalOrder.IndexOf(item);
-        //            if (idx != inOrderTraversalOrder.Count - 1)
-        //            {
-        //                return inOrderTraversalOrder.ElementAt(idx + 1);
-        //            }
-        //            continue;
-        //        }
-        //    }
+            foreach (var item in inOrderTraversalOrder)
+            {
+                if (item == node)
+                {
+                    var idx = inOrderTraversalOrder.IndexOf(item);
+                    if (idx != inOrderTraversalOrder.Count - 1)
+                    {
+                        return inOrderTraversalOrder.ElementAt(idx + 1);
+                    }
+                    continue;
+                }
+            }
 
-        //    return null;
-        //}
+            return null;
+        }
 
-        //public static List<BinaryTree> lstNodes = new List<BinaryTree>();
-        //public static List<BinaryTree> getInOrderTraversalOrder(BinaryTree node)
-        //{
-        //    if (node == null)
-        //        return lstNodes;
+        public static List<BinaryTree> lstNodes = new List<BinaryTree>();
+        public static List<BinaryTree> getInOrderTraversalOrder(BinaryTree node)
+        {
+            if (node == null)
+                return lstNodes;
 
-        //    getInOrderTraversalOrder(node.left);
-        //    lstNodes.Add(node);
-        //    getInOrderTraversalOrder(node.right);
+            getInOrderTraversalOrder(node.left);
+            lstNodes.Add(node);
+            getInOrderTraversalOrder(node.right);
 
-        //    return lstNodes;
-        //}
+            return lstNodes;
+        }
         #endregion
     }
 }
