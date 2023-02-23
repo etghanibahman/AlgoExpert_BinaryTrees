@@ -45,60 +45,92 @@ namespace BinaryTreeDiameter
 
             tree9.left = null;
             tree9.right = null;
-			#endregion
+            #endregion
 
-			PrintTree(tree1);
-			//Console.WriteLine("Hello World!");
-		}
+            PrintTree(tree1);
+            Console.WriteLine($"The diameter is {BinaryTreeDiameter(tree1)}");
+        }
 
-		public static int BinaryTreeDiameter(BinaryTree tree)
-		{
-			// Write your code here.
-			return -1;
-		}
+        // O(n) Time , O(h) best case, O(n) worst case Space
+        public static int BinaryTreeDiameter(BinaryTree tree)
+        {
+            return BinaryTreeDiameterHelper(tree);
+        }
 
-		public class BinaryTree
-		{
-			public int value;
-			public BinaryTree left;
-			public BinaryTree right;
+        public class BinaryTree
+        {
+            public int value;
+            public BinaryTree left;
+            public BinaryTree right;
 
-			public BinaryTree(int value)
-			{
-				this.value = value;
-			}
-		}
+            public BinaryTree(int value)
+            {
+                this.value = value;
+            }
+        }
 
-		public static void PrintTree(BinaryTree root)
-		{
-			var q = new Queue<(BinaryTree node, int depth)>();
-			q.Enqueue((root, 0));
-			Dictionary<int, int> nodesValueDepth = new Dictionary<int, int>();
+        public static int counter = 1;
+        public static int BinaryTreeDiameterHelper(BinaryTree tree)
+        {
+            Console.WriteLine($"Call No {counter} , tree's value : {tree?.value}");
+            if (tree == null) return 0;
+            counter++;
 
-			while (q.Count > 0)
-			{
-				var currentNode = q.Dequeue();
-				var currentDepth = currentNode.depth + 1;
-				nodesValueDepth.Add(currentNode.node.value, currentNode.depth);
-				if (currentNode.node.left != null)
-				{
-					q.Enqueue((currentNode.node.left, currentDepth));
-				}
-				if (currentNode.node.right != null)
-				{
-					q.Enqueue((currentNode.node.right, currentDepth));
-				}
-			}
+            int leftHeight = Height(tree.left);
+            int rightHeight = Height(tree.right);
 
-			var maxDepth = nodesValueDepth.Values.Max();
-			for (int i = 0; i <= maxDepth; i++)
-			{
-				if (i > 0)
-				{
-					Console.WriteLine("|");
-				}
-				Console.WriteLine(string.Join('-', nodesValueDepth.Where(a => a.Value == i).Select(a => a.Key).ToList()));
-			}
-		}
-	}
+            Console.WriteLine($"Call No {counter} , leftHeight : {leftHeight}, rightHeight : {rightHeight}");
+
+            int leftDiameter = BinaryTreeDiameterHelper(tree.left);
+            Console.WriteLine($"--- left is finished -----------------------");
+            int rightDiameter = BinaryTreeDiameterHelper(tree.right);
+
+            Console.WriteLine($"Call No {counter} , leftDiameter : {leftDiameter}, rightDiameter : {rightDiameter}");
+            
+            var maxValue = Math.Max(leftHeight + rightHeight, Math.Max(leftDiameter, rightDiameter));
+
+            Console.WriteLine($"------ maxValue = {maxValue}--------------------");
+            Console.WriteLine($"\n -------------------------- \n");
+            return maxValue;
+        }
+
+        private static int Height(BinaryTree tree)
+        {
+            if (tree == null)
+                return 0;
+            return 1 + Math.Max(Height(tree.left), Height(tree.right));
+        }
+
+        public static void PrintTree(BinaryTree root)
+        {
+            var q = new Queue<(BinaryTree node, int depth)>();
+            q.Enqueue((root, 0));
+            Dictionary<int, int> nodesValueDepth = new Dictionary<int, int>();
+
+            while (q.Count > 0)
+            {
+                var currentNode = q.Dequeue();
+                var currentDepth = currentNode.depth + 1;
+                nodesValueDepth.Add(currentNode.node.value, currentNode.depth);
+                if (currentNode.node.left != null)
+                {
+                    q.Enqueue((currentNode.node.left, currentDepth));
+                }
+                if (currentNode.node.right != null)
+                {
+                    q.Enqueue((currentNode.node.right, currentDepth));
+                }
+            }
+
+            var maxDepth = nodesValueDepth.Values.Max();
+            for (int i = 0; i <= maxDepth; i++)
+            {
+                if (i > 0)
+                {
+                    Console.WriteLine("|");
+                }
+                Console.WriteLine(string.Join('-', nodesValueDepth.Where(a => a.Value == i).Select(a => a.Key).ToList()));
+            }
+        }
+    }
 }
