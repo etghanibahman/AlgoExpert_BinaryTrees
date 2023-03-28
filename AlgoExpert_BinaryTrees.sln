@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FindSuccessorProject", "Fin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvertBinaryTree", "InvertBinaryTree\InvertBinaryTree.csproj", "{206F2EE6-0C1A-42A3-B36C-742FE7BC6EBE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryTreeDiameter", "BinaryTreeDiameter\BinaryTreeDiameter.csproj", "{4EBC041C-2ED6-40C4-B4CF-8FBCE4800BDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinaryTreeDiameter", "BinaryTreeDiameter\BinaryTreeDiameter.csproj", "{4EBC041C-2ED6-40C4-B4CF-8FBCE4800BDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeightBalancedBinaryTree", "HeightBalancedBinaryTree\HeightBalancedBinaryTree.csproj", "{1D253A18-3588-4004-980F-9E77DBCD0E6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{4EBC041C-2ED6-40C4-B4CF-8FBCE4800BDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4EBC041C-2ED6-40C4-B4CF-8FBCE4800BDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4EBC041C-2ED6-40C4-B4CF-8FBCE4800BDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D253A18-3588-4004-980F-9E77DBCD0E6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D253A18-3588-4004-980F-9E77DBCD0E6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D253A18-3588-4004-980F-9E77DBCD0E6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D253A18-3588-4004-980F-9E77DBCD0E6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +68,7 @@ Global
 		{4C3E4F02-4CDE-4A33-B16C-4323F06064B8} = {7CA7052E-ED00-44C6-A7F5-D8A34571FD51}
 		{206F2EE6-0C1A-42A3-B36C-742FE7BC6EBE} = {7CA7052E-ED00-44C6-A7F5-D8A34571FD51}
 		{4EBC041C-2ED6-40C4-B4CF-8FBCE4800BDC} = {7CA7052E-ED00-44C6-A7F5-D8A34571FD51}
+		{1D253A18-3588-4004-980F-9E77DBCD0E6F} = {7CA7052E-ED00-44C6-A7F5-D8A34571FD51}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EA17F4B6-775C-485E-881A-9FA9B21028D4}
