@@ -25,7 +25,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeightBalancedBinaryTree", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EvaluateExpressionTrees", "EvaluateExpressionTrees\EvaluateExpressionTrees.csproj", "{B92D67A2-FCE6-480D-BE51-91BA59632514}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MergeBinaryTrees", "MergeBinaryTrees\MergeBinaryTrees.csproj", "{E83D0DA7-A935-4A1D-BDB4-1E1B535BE6DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MergeBinaryTrees", "MergeBinaryTrees\MergeBinaryTrees.csproj", "{E83D0DA7-A935-4A1D-BDB4-1E1B535BE6DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SymmetricalTree", "SymmetricalTree\SymmetricalTree.csproj", "{9A48571D-4DFB-4E0B-8AD1-F11E9362C07F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{E83D0DA7-A935-4A1D-BDB4-1E1B535BE6DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E83D0DA7-A935-4A1D-BDB4-1E1B535BE6DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E83D0DA7-A935-4A1D-BDB4-1E1B535BE6DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A48571D-4DFB-4E0B-8AD1-F11E9362C07F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A48571D-4DFB-4E0B-8AD1-F11E9362C07F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A48571D-4DFB-4E0B-8AD1-F11E9362C07F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A48571D-4DFB-4E0B-8AD1-F11E9362C07F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +89,7 @@ Global
 		{1D253A18-3588-4004-980F-9E77DBCD0E6F} = {7CA7052E-ED00-44C6-A7F5-D8A34571FD51}
 		{B92D67A2-FCE6-480D-BE51-91BA59632514} = {7442AE58-C094-4BC9-93E2-654638DC308F}
 		{E83D0DA7-A935-4A1D-BDB4-1E1B535BE6DE} = {7CA7052E-ED00-44C6-A7F5-D8A34571FD51}
+		{9A48571D-4DFB-4E0B-8AD1-F11E9362C07F} = {7CA7052E-ED00-44C6-A7F5-D8A34571FD51}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EA17F4B6-775C-485E-881A-9FA9B21028D4}
