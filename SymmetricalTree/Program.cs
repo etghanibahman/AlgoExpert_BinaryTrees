@@ -77,7 +77,7 @@ namespace SymmetricalTree
             Console.WriteLine($"is this tree Symmetrical : {SymmetricalTree(tree1)}");
         }
 
-        #region Recursive_Solution
+        #region Recursive_Solution___O(n)_Time__O(h)_Space
         public static bool SymmetricalTree(BinaryTree tree)
         {
             if (tree == null)
@@ -104,7 +104,7 @@ namespace SymmetricalTree
         #endregion
 
 
-        #region My_Solution
+        #region My_Solution___O(n)_Time__O(h)_Space
         //public static bool SymmetricalTree(BinaryTree tree)
         //{
         //    if (tree.left == null && tree.right == null)
